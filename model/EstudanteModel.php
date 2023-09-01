@@ -20,7 +20,6 @@ class EstudanteModel
     public function listarModel(): array
     {
         $dadosArray = $this->database->executeSelect("SELECT * FROM estudantes");
-
         //$array = array(1, 2, 3, 4, 5);
         //$array = ["João", "Lucas", "Maria", "Eduardo"];
 
@@ -32,6 +31,5 @@ class EstudanteModel
         $sql = "INSERT INTO estudantes (nome, idade) Values ('$nome', '$idade')";
         $this->database->insert($sql);
 
-        echo "Estudante salvo com sucesso!";
     }
 }

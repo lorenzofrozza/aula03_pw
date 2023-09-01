@@ -15,6 +15,10 @@
 
     <img class="mb-5 mt-5 " src="acessibilidade.jpg" alt="A imagem possui exemplos do direito a acessibilidade, como, cadeirante, gestante, idoso, entre outros. ">
 
+    <br>
+  <a href="/aula03/?controller=Estudante&acao=salvar " class="btn btn-success"> Cadastrar estudante </a>
+    <br>
+
     <table class="table bg-black text-white">
   <thead>
     <tr>
@@ -25,7 +29,7 @@
     </tr>
   </thead>
   <tbody>
-  <?php foreach($estudantes as $estudanteAtual) { ?>
+  <?php foreach ($estudantes as $estudanteAtual) { ?>
             <tr>
                 <td><?php echo $estudanteAtual ['id'] ?> </td>
                 <td><?php echo $estudanteAtual ['nome'] ?> </td>
