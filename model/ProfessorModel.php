@@ -2,7 +2,7 @@
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/' . FOLDER . '/database/Database.php';
 
-class EstudanteModel
+class ProfessorModel
 {
     private int $idade;
 
@@ -19,7 +19,7 @@ class EstudanteModel
 
     public function listarModel(): array
     {
-        $dadosArray = $this->database->executeSelect("SELECT * FROM estudantes");
+        $dadosArray = $this->database->executeSelect("SELECT * FROM professores");
         //$array = array(1, 2, 3, 4, 5);
         //$array = ["João", "Lucas", "Maria", "Eduardo"];
 
@@ -28,7 +28,7 @@ class EstudanteModel
 
     public function salvarModel(string $nome, int $idade)
     {
-        $sql = "INSERT INTO estudantes (nome, idade) Values ('$nome', '$idade')";
+        $sql = "INSERT INTO professores (nome, idade) Values ('$nome', '$idade')";
         $this->database->insert($sql);
 
     }
