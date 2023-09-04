@@ -20,9 +20,6 @@ class EstudanteModel
     public function listarModel(): array
     {
         $dadosArray = $this->database->executeSelect("SELECT * FROM estudantes");
-        //$array = array(1, 2, 3, 4, 5);
-        //$array = ["João", "Lucas", "Maria", "Eduardo"];
-
         return $dadosArray;
     }
 
@@ -32,4 +29,22 @@ class EstudanteModel
         $this->database->insert($sql);
 
     }
+
+    public function buscarPeloId(int $id)
+    {
+        $estudanteArray = $this->database->executeSelect("SELECT * FROM estudantes WHERE id = '$id'");
+        return $estudanteArray[0];
+    }
+
+    public function atualizarModel(int $id, string $nome, int $idade)
+    {
+        $sql = "UPDATE estudantes SET nome='$nome', idade='$idade' WHERE id='$id'";
+        $this->database->insert($sql);
+    }
+    public function excluirModel(int $id)
+    {
+        $sql = "DELETE FROM estudantes WHERE id='$id'";
+        $this->database->insert($sql);
+    }
+    
 }
