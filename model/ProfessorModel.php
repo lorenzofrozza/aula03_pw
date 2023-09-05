@@ -32,4 +32,21 @@ class ProfessorModel
         $this->database->insert($sql);
 
     }
+
+    public function buscarPeloId(int $id)
+    {
+        $estudanteArray = $this->database->executeSelect("SELECT * FROM professores WHERE id = '$id'");
+        return $estudanteArray[0];
+    }
+
+    public function atualizarModel(int $id, string $nome, int $idade)
+    {
+        $sql = "UPDATE professores SET nome='$nome', idade='$idade' WHERE id='$id'";
+        $this->database->insert($sql);
+    }
+    public function excluirModel(int $id)
+    {
+        $sql = "DELETE FROM professores WHERE id='$id'";
+        $this->database->insert($sql);
+    }
 }
